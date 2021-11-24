@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+Listas de Autores
+{% endblock titulo %}
+
+{% block body %}
+
+{% if autores %}
+
+    {% for autor in autores %}
+<div><a href='lista_libros/{{autor.id}}'> {{autor.nombre}}  {{autor.apellidos}} </a>
+    <button><a href="editar_autor/{{autor.id}}"> Editar</a></button>
+    <button><a href="eliminar_autor/{{autor.id}}"> Eliminar</a></button>
+</div>
+
+{%  endfor %}
+
+
+{% else %}
+<h1>No existen autores</h1>
+{% endif %}
+<a href="crear_autor"> <input type="submit" value="Crear un nuevo autor"></a>
+{% endblock body %}

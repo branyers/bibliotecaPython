@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Lista de Libros
+{% endblock title %}
+
+{% block body %}
+  {% if libros %}
+
+    {% for libro in libros%}
+    <h3>{{libro.titulo}}</h3>
+  {%endfor%}
+
+
+{% else %}
+<h1>No tiene libros publicados</h1>
+
+{% endif %}
+
+
+{% endblock body %}
